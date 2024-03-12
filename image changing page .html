@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Change with Button</title>
+    <style>
+        /* Basic styling */
+		
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center; /* Center the logo vertically */
+        }
+
+        .logo img {
+            border-radius: 50%;
+            width: 50px; /* Adjust the size as needed */
+            height: 50px; /* Adjust the size as needed */
+            margin-right: 10px; /* Add some space between the logo and the navigation links */
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center; /* Center the navigation links vertically */
+        }
+
+        li {
+            margin: 0 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            color: #007BFF; /* Adjust the color for the hover effect */
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 80vh;
+        }
+        .image-box {
+            width: 80%;
+            
+            padding: 20px;
+            border: 3px solid #333;
+            text-align: center;
+            border-radius: 15px; /* Rounded corners */
+            display: flex; /* Display images side by side */
+            justify-content: space-between; /* Spacing between images */
+        }
+        .image-box img {
+            width: 45%; /* Equal width for both images */
+            margin: 10px;
+			border-radius: 15px;
+        }
+        .image-box figcaption {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        #buttonA {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #textInput {
+		width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 16px;
+			
+	
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <h1></h1>
+            </div>
+           <ul>
+                <li><a href="coding cba.html">Home</a></li>
+                <li><a href="codingcbahtml2.html">how it works</a></li>
+                <li><a href="image changing page .html">demo</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <input type="text" id="textInput" placeholder="this a demo version of the actual product pressing the button A will allow you to see what happens to the reciver device after buttonA is pressed from the sender device ">
+        <div class="image-box">
+            <figure>
+                <img id="image1" src="https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/429669436_338259382548672_3799584699511052187_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=3635dc&_nc_ohc=zROexA4q2wsAX_c1v1h&_nc_ht=scontent-dub4-1.xx&oh=00_AfBkMdf1g_Skn-FW_LCORjRR_JtzcJxgA8_2LxNrW5B1kA&oe=65EA87DF" alt="Image 1">
+                <figcaption>sender</figcaption>
+            </figure>
+            <figure>
+                <img id="image2" src="image2.jpg" alt="Image 2">
+                <figcaption>reciver</figcaption>
+            </figure>
+        </div>
+        <button id="buttonA">buttonA</button>
+    </main>
+
+    <script>
+        document.getElementById('buttonA').addEventListener('click', function() {
+            var imageElement = document.getElementById('image2');
+            // Change the image to a new one
+            imageElement.src = 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/429816100_338260075881936_7985042621390752344_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=3635dc&_nc_ohc=5fp-YIUzztcAX8vTCWi&_nc_ht=scontent-dub4-1.xx&oh=00_AfBXe9U5DBO9-0lV4GDFiGnNbbNxLR2CenDnz3_qHwb9eg&oe=65EAC22A';
+            imageElement.alt = 'New Image Alt Text';
+            // Revert the image back to the default after 4 seconds
+            setTimeout(function() {
+                imageElement.src = 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/429779728_338260565881887_2877750286251570744_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=3635dc&_nc_ohc=9eE3NGuWzmQAX89XFx3&_nc_ht=scontent-dub4-1.xx&oh=00_AfAu5RooYapWm_ZBH91oBtw7bMMm43cuqQpt7_cbz5lakw&oe=65E98A93';
+                imageElement.alt = 'Image 2';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
